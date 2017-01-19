@@ -7,30 +7,54 @@
     nickels: 1,
     pennies: 2
   }
-<<<<<<< HEAD
- Use for loops to find the number of coins can go into the dollar amount evenly.  
- After that, use another for loop to run the amount of dimes into the remainder left 
- over from the quarters.  Use more for loops for the nickels and pennies. 
-=======
-
->>>>>>> cb182d9be702b7383175c2228eeb9593a9695ff6
+ 
 */
 
+var i = 0.94;
+  //the dollar amount will be input here
 function coinCounter () {
-  // Initialize a JavaScript object to hold the coins
-  var coinPurse = {};
 
-<<<<<<< HEAD
-  coinPurse.quarters = .25; 
-=======
-  coinPurse.quarters = .25;
->>>>>>> cb182d9be702b7383175c2228eeb9593a9695ff6
-  coinPurse.dimes = .1;
-  coinPurse.nickels = .05;
-  coinPurse.pennies = .01; 
+  var money = i * 100;
 
-  return coinPurse;
-}
+ // Initialize a JavaScript object to hold the coins
+  var coinPurse = {
+    quarters: 0,
+    dimes: 0,
+    nickels: 0,
+    pennies: 0,
+  };
+
+  //using different variables to perfom the math functions and break down the dollar amount into coin count
+
+  // finding the quarters
+    quartersRemainder = money % 25; 
+      // console.log(quartersRemainder); 
+    quarters = (money - quartersRemainder) / 25; 
+      console.log(quarters); 
+    
+  //finding the dimes
+    dimesRemainder = quartersRemainder % 10;
+      // console.log(dimesRemainder); 
+    dimes = (quartersRemainder - dimesRemainder) / 10;
+      console.log(dimes); 
+
+  //finding the nickels 
+    nickelsRemainder = dimesRemainder % 5;
+      // console.log(nickelsRemainder); 
+    nickels = (dimesRemainder - nickelsRemainder) / 5;
+      console.log(nickels); 
+
+  //finding the pennies
+    penniesRemainder = nickelsRemainder % 1;
+      // console.log(penniesRemainder);
+    pennies = (nickelsRemainder - penniesRemainder) / 1;
+      console.log(pennies);
+
+
+   
+ }
+
+
 
 var coins = coinCounter();
-console.log(coins);
+console.log(coins); 
