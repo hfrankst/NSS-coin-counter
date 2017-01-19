@@ -7,37 +7,54 @@
     nickels: 1,
     pennies: 2
   }
- Use for loops to find the number of coins can go into the dollar amount evenly.  
- After that, use another for loop to run the amount of dimes into the remainder left 
- over from the quarters.  Use more for loops for the nickels and pennies. 
-
+ 
 */
+
+var i = 0.94;
   //the dollar amount will be input here
-function coinCounter (dollar) {
-  // Initialize a JavaScript object to hold the coins
-  var newDollar = dollar * 100;
-  console.log(newDollar);
-  var coinPurse = {};
-  coinPurse.quarters = 0;
-  coinPurse.dimes = 0;
-  coinPurse.nickels = 0;
-  coinPurse.pennies = 0;
+function coinCounter () {
 
-  //first for loop to see how many quarters can fit into the $ amount
-  for (coinPurse = 0; coinPurse < coinPurse.length; coinPurse++) {
-    var quarterRemainder = newDollar % 25;
-    var quarterDiff = newDollar - quarterRemainder;
-    coinPurse.quarters = quarterDiff / 25;
-    console.log(coinPurse.quarters);
+  var money = i * 100;
 
-  }
+ // Initialize a JavaScript object to hold the coins
+  var coinPurse = {
+    quarters: 0,
+    dimes: 0,
+    nickels: 0,
+    pennies: 0,
+  };
 
+  //using different variables to perfom the math functions and break down the dollar amount into coin count
+
+  // finding the quarters
+    quartersRemainder = money % 25; 
+      // console.log(quartersRemainder); 
+    quarters = (money - quartersRemainder) / 25; 
+      console.log(quarters); 
+    
+  //finding the dimes
+    dimesRemainder = quartersRemainder % 10;
+      // console.log(dimesRemainder); 
+    dimes = (quartersRemainder - dimesRemainder) / 10;
+      console.log(dimes); 
+
+  //finding the nickels 
+    nickelsRemainder = dimesRemainder % 5;
+      // console.log(nickelsRemainder); 
+    nickels = (dimesRemainder - nickelsRemainder) / 5;
+      console.log(nickels); 
+
+  //finding the pennies
+    penniesRemainder = nickelsRemainder % 1;
+      // console.log(penniesRemainder);
+    pennies = (nickelsRemainder - penniesRemainder) / 1;
+      console.log(pennies);
 
 
    
+ }
 
-  return coinPurse;
-}
+
 
 var coins = coinCounter();
-console.log(coins);
+console.log(coins); 
