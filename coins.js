@@ -12,21 +12,29 @@
  over from the quarters.  Use more for loops for the nickels and pennies. 
 
 */
-
-function coinCounter () {
+  //the dollar amount will be input here
+function coinCounter (dollar) {
   // Initialize a JavaScript object to hold the coins
+  var newDollar = dollar * 100;
+  console.log(newDollar);
   var coinPurse = {};
+  coinPurse.quarters = 0;
+  coinPurse.dimes = 0;
+  coinPurse.nickels = 0;
+  coinPurse.pennies = 0;
 
   //first for loop to see how many quarters can fit into the $ amount
   for (coinPurse = 0; coinPurse < coinPurse.length; coinPurse++) {
-    coinPurse.quarters = 0; 
-  }
-  //second for loop for the number of dimes
-  coinPurse.dimes = 0;
+    var quarterRemainder = newDollar % 25;
+    var quarterDiff = newDollar - quarterRemainder;
+    coinPurse.quarters = quarterDiff / 25;
+    console.log(coinPurse.quarters);
 
-  coinPurse.nickels = 0;
-  
-  coinPurse.pennies = 0; 
+  }
+
+
+
+   
 
   return coinPurse;
 }
